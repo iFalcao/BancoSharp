@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Banco
 {
-    public class ContaCorrente : Conta
+    public class ContaCorrente : Conta, ITributavel
     {
         public ContaCorrente ()	{}
         public ContaCorrente(int numero) : base(numero) { }
+
+        public double CalculaTributo()
+        {
+            return this.Saldo * 0.05;
+        }
 
         public override bool Sacar(double valorDigitado)
         {

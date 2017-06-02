@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Banco
 {
-    public class Conta
+    public abstract class Conta
     {
         public Conta() { }
         public Conta(int numero)

@@ -25,7 +25,7 @@ namespace Banco
         {
             this.contas = new List<Conta>();
 
-            Conta c1 = new Conta(1);
+            Conta c1 = new ContaPoupanca(1);
             c1.cliente = new Cliente("Icaro");
             c1.Saldo = 14500.00;
             this.AdicionaConta(c1);
@@ -35,7 +35,7 @@ namespace Banco
             c2.Saldo = 1250.00;
             this.AdicionaConta(c2);
 
-            Conta c3 = new Conta(3);
+            Conta c3 = new ContaPoupanca(3);
             c3.cliente = new Cliente("José");
             c3.Saldo = 5250.25;
             this.AdicionaConta(c3);
@@ -96,13 +96,24 @@ namespace Banco
         {
             int indiceDest = comboTransferencia.SelectedIndex;
             contaDestinatario = contas[indiceDest+1];
-            MessageBox.Show(contaDestinatario.cliente.Nome);
         }
 
         private void botaoNovaConta_Click(object sender, EventArgs e)
         {
             FormCadastroConta formularioCadastro = new FormCadastroConta(this);
             formularioCadastro.ShowDialog();
+        }
+
+        private void btnCalculoImpostos_Click(object sender, EventArgs e)
+        {
+		    if (contaAtual is ContaCorrente cr)
+	        {
+		        MessageBox.Show("Conta Corrente\nTitular: " + cr.cliente.Nome + "\nTributo de R$" + cr.CalculaTributo().ToString());
+		    }
+			else if (contaAtual is ContaPoupanca cp)
+		    {
+	    	    MessageBox.Show("Conta Poupança\nTitular: " + cp.cliente.Nome + "\nTributo de R$" + cp.CalculaTributo().ToString());
+		    }
         }
     }
 }

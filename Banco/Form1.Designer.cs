@@ -40,15 +40,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.comboContas = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.transferenciaValorBox = new System.Windows.Forms.TextBox();
-            this.comboTransferencia = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.botaoTransferencia = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboTransferencia = new System.Windows.Forms.ComboBox();
+            this.transferenciaValorBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.botaoNovaConta = new System.Windows.Forms.Button();
+            this.btnCalculoImpostos = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -178,15 +179,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar Conta";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Titular da Conta";
-            // 
             // comboContas
             // 
             this.comboContas.FormattingEnabled = true;
@@ -195,6 +187,15 @@
             this.comboContas.Size = new System.Drawing.Size(100, 21);
             this.comboContas.TabIndex = 3;
             this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Titular da Conta";
             // 
             // groupBox3
             // 
@@ -210,40 +211,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Transferência";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Valor";
-            // 
-            // transferenciaValorBox
-            // 
-            this.transferenciaValorBox.Location = new System.Drawing.Point(94, 17);
-            this.transferenciaValorBox.Name = "transferenciaValorBox";
-            this.transferenciaValorBox.Size = new System.Drawing.Size(100, 20);
-            this.transferenciaValorBox.TabIndex = 1;
-            // 
-            // comboTransferencia
-            // 
-            this.comboTransferencia.FormattingEnabled = true;
-            this.comboTransferencia.Location = new System.Drawing.Point(94, 44);
-            this.comboTransferencia.Name = "comboTransferencia";
-            this.comboTransferencia.Size = new System.Drawing.Size(100, 21);
-            this.comboTransferencia.TabIndex = 2;
-            this.comboTransferencia.SelectedIndexChanged += new System.EventHandler(this.comboTransferencia_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Destinatário";
-            // 
             // botaoTransferencia
             // 
             this.botaoTransferencia.Location = new System.Drawing.Point(65, 75);
@@ -254,9 +221,43 @@
             this.botaoTransferencia.UseVisualStyleBackColor = true;
             this.botaoTransferencia.Click += new System.EventHandler(this.botaoTransferencia_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Destinatário";
+            // 
+            // comboTransferencia
+            // 
+            this.comboTransferencia.FormattingEnabled = true;
+            this.comboTransferencia.Location = new System.Drawing.Point(94, 44);
+            this.comboTransferencia.Name = "comboTransferencia";
+            this.comboTransferencia.Size = new System.Drawing.Size(100, 21);
+            this.comboTransferencia.TabIndex = 2;
+            this.comboTransferencia.SelectedIndexChanged += new System.EventHandler(this.comboTransferencia_SelectedIndexChanged);
+            // 
+            // transferenciaValorBox
+            // 
+            this.transferenciaValorBox.Location = new System.Drawing.Point(94, 17);
+            this.transferenciaValorBox.Name = "transferenciaValorBox";
+            this.transferenciaValorBox.Size = new System.Drawing.Size(100, 20);
+            this.transferenciaValorBox.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Valor";
+            // 
             // botaoNovaConta
             // 
-            this.botaoNovaConta.Location = new System.Drawing.Point(101, 447);
+            this.botaoNovaConta.Location = new System.Drawing.Point(36, 442);
             this.botaoNovaConta.Name = "botaoNovaConta";
             this.botaoNovaConta.Size = new System.Drawing.Size(75, 23);
             this.botaoNovaConta.TabIndex = 3;
@@ -264,11 +265,22 @@
             this.botaoNovaConta.UseVisualStyleBackColor = true;
             this.botaoNovaConta.Click += new System.EventHandler(this.botaoNovaConta_Click);
             // 
+            // btnCalculoImpostos
+            // 
+            this.btnCalculoImpostos.Location = new System.Drawing.Point(136, 442);
+            this.btnCalculoImpostos.Name = "btnCalculoImpostos";
+            this.btnCalculoImpostos.Size = new System.Drawing.Size(100, 23);
+            this.btnCalculoImpostos.TabIndex = 4;
+            this.btnCalculoImpostos.Text = "Calcular Impostos";
+            this.btnCalculoImpostos.UseVisualStyleBackColor = true;
+            this.btnCalculoImpostos.Click += new System.EventHandler(this.btnCalculoImpostos_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 477);
+            this.Controls.Add(this.btnCalculoImpostos);
             this.Controls.Add(this.botaoNovaConta);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -309,6 +321,7 @@
         private System.Windows.Forms.TextBox transferenciaValorBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button botaoNovaConta;
+        private System.Windows.Forms.Button btnCalculoImpostos;
     }
 }
 

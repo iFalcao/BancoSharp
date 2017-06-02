@@ -28,7 +28,7 @@ namespace Banco
             Conta novaConta;
             if (tipoSelecionado == "Poupança")
             {
-                 novaConta = new Conta();
+                 novaConta = new ContaPoupanca();
             }
             else
             {
