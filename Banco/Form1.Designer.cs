@@ -35,7 +35,7 @@
             this.Valor = new System.Windows.Forms.Label();
             this.valorBox = new System.Windows.Forms.TextBox();
             this.botaoSacar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.botaoDepositar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             this.groupBox1.Controls.Add(this.Valor);
             this.groupBox1.Controls.Add(this.valorBox);
             this.groupBox1.Controls.Add(this.botaoSacar);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.botaoDepositar);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -123,6 +123,7 @@
             // 
             // botaoSacar
             // 
+            this.botaoSacar.Enabled = false;
             this.botaoSacar.Location = new System.Drawing.Point(108, 191);
             this.botaoSacar.Name = "botaoSacar";
             this.botaoSacar.Size = new System.Drawing.Size(75, 23);
@@ -131,15 +132,16 @@
             this.botaoSacar.UseVisualStyleBackColor = true;
             this.botaoSacar.Click += new System.EventHandler(this.botaoSacar_Click);
             // 
-            // button1
+            // botaoDepositar
             // 
-            this.button1.Location = new System.Drawing.Point(12, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Depositar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.botaoDeposito_Click);
+            this.botaoDepositar.Enabled = false;
+            this.botaoDepositar.Location = new System.Drawing.Point(12, 191);
+            this.botaoDepositar.Name = "botaoDepositar";
+            this.botaoDepositar.Size = new System.Drawing.Size(75, 23);
+            this.botaoDepositar.TabIndex = 6;
+            this.botaoDepositar.Text = "Depositar";
+            this.botaoDepositar.UseVisualStyleBackColor = true;
+            this.botaoDepositar.Click += new System.EventHandler(this.botaoDeposito_Click);
             // 
             // label3
             // 
@@ -186,6 +188,7 @@
             this.comboContas.Name = "comboContas";
             this.comboContas.Size = new System.Drawing.Size(100, 21);
             this.comboContas.TabIndex = 3;
+            this.comboContas.Text = "Selecione";
             this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
             // 
             // label4
@@ -213,6 +216,7 @@
             // 
             // botaoTransferencia
             // 
+            this.botaoTransferencia.Enabled = false;
             this.botaoTransferencia.Location = new System.Drawing.Point(65, 75);
             this.botaoTransferencia.Name = "botaoTransferencia";
             this.botaoTransferencia.Size = new System.Drawing.Size(75, 23);
@@ -237,6 +241,7 @@
             this.comboTransferencia.Name = "comboTransferencia";
             this.comboTransferencia.Size = new System.Drawing.Size(100, 21);
             this.comboTransferencia.TabIndex = 2;
+            this.comboTransferencia.Text = "Selecione";
             this.comboTransferencia.SelectedIndexChanged += new System.EventHandler(this.comboTransferencia_SelectedIndexChanged);
             // 
             // transferenciaValorBox
@@ -245,6 +250,7 @@
             this.transferenciaValorBox.Name = "transferenciaValorBox";
             this.transferenciaValorBox.Size = new System.Drawing.Size(100, 20);
             this.transferenciaValorBox.TabIndex = 1;
+            this.transferenciaValorBox.Text = "0";
             // 
             // label5
             // 
@@ -302,7 +308,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button botaoSacar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button botaoDepositar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

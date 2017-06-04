@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Banco.Contas;
 
 namespace Banco
 {
     public partial class FormCadastroConta : Form
     {
-        private Form1 formPrincipal;
-        private string tipoSelecionado;
+        public Form1 formPrincipal;
+        public string tipoSelecionado;
 
         public FormCadastroConta(Form1 formPrincipal)
         {
@@ -21,24 +22,25 @@ namespace Banco
             InitializeComponent();
             comboTipoConta.Items.Add("Conta Poupança");
             comboTipoConta.Items.Add("Conta Corrente");
+            proxContaLabel.Text = Conta.ProximaConta().ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             Conta novaConta;
             if (tipoSelecionado == "Poupança")
             {
-                 novaConta = new ContaPoupanca();
+                novaConta = new ContaPoupanca();
             }
             else
             {
                 novaConta = new ContaCorrente();
             }
-
-            novaConta.NumeroConta = int.Parse(numeroBox.Text);
             novaConta.cliente = new Cliente(titularBox.Text);
+            novaConta.NumeroConta = int.Parse(proxContaLabel.Text);
             novaConta.Saldo = 50.00;
             MessageBox.Show("Conta criada com Sucesso!\nSeu saldo é R$50");
+            proxContaLabel.Text = Conta.ProximaConta().ToString();
 
             this.formPrincipal.AdicionaConta(novaConta);
         }
