@@ -53,6 +53,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.nomeBuscaBox = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnFormRelatorios = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -313,11 +314,22 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
+            // btnFormRelatorios
+            // 
+            this.btnFormRelatorios.Location = new System.Drawing.Point(36, 529);
+            this.btnFormRelatorios.Name = "btnFormRelatorios";
+            this.btnFormRelatorios.Size = new System.Drawing.Size(75, 23);
+            this.btnFormRelatorios.TabIndex = 5;
+            this.btnFormRelatorios.Text = "Relatórios";
+            this.btnFormRelatorios.UseVisualStyleBackColor = true;
+            this.btnFormRelatorios.Click += new System.EventHandler(this.btnFormRelatorios_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(269, 575);
+            this.Controls.Add(this.btnFormRelatorios);
             this.Controls.Add(this.btnCalculoImpostos);
             this.Controls.Add(this.botaoNovaConta);
             this.Controls.Add(this.groupBox3);
@@ -363,6 +375,7 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox nomeBuscaBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnFormRelatorios;
     }
 }
 

@@ -27,19 +27,33 @@ namespace Banco
         { 
             Conta c1 = new ContaPoupanca();
             c1.cliente = new Cliente("Ícaro");
-            c1.Saldo = 14500.00;
+            c1.Saldo = 4506.90;
 
             Conta c2 = new ContaCorrente();
             c2.cliente = new Cliente("Arnold");
-            c2.Saldo = 1250.00;
+            c2.Saldo = 250.00;
 
             Conta c3 = new ContaPoupanca();
             c3.cliente = new Cliente("José");
-            c3.Saldo = 5250.25;
+            c3.Saldo = 111.37;
 
             AdicionaConta(c1);
             AdicionaConta(c2);
             AdicionaConta(c3);
+
+            // Função anônima para criar uma lista de contas com saldo maior que 10k
+            var ricos = contas.Where(c => c.Saldo > 10000);
+            // Utilizando a LINQ para retornar a soma do saldo de todas as contas
+            // Possui todas as funções integradas do SQL => Average, Count, Max, Min
+            double totalSaldos = contas.Sum(c => c.Saldo);
+            // utilizando o LINQ para fazer uma query retornando uma lista de contas
+            var pobres = from c in contas
+                         where c.Saldo < 1500
+                         select c;
+            // Gerando um objeto anônimo usando LINQ
+            var filtradas = from c in contas
+                            where c.NumeroConta > 1
+                            select new { c.cliente.Nome, c.Saldo };
         }
 
         public void AdicionaConta(Conta contaCriada)
@@ -182,6 +196,12 @@ namespace Banco
             {
                 MessageBox.Show("Não existe um titular com esse nome!");
             }
+        }
+
+        private void btnFormRelatorios_Click(object sender, EventArgs e)
+        {
+            FormRelatorios formRelatorios = new FormRelatorios(contas);
+            formRelatorios.ShowDialog();
         }
     }
 }
