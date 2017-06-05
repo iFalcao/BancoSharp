@@ -20,7 +20,7 @@ namespace Banco
 
         public FormCadastroConta(Form1 formPrincipal)
         {
-            this.formPrincipal = new Form1();
+            this.formPrincipal = formPrincipal;
             InitializeComponent();
             
             comboTipoConta.Items.Add("Conta Poupança");
