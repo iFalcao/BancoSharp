@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banco.Contas;
+using Banco.Busca;
 
 namespace Banco
 {
     public partial class FormCadastroConta : Form
     {
+        private ICollection<string> devedores;
         public Form1 formPrincipal;
         public string tipoSelecionado;
 
@@ -20,9 +22,13 @@ namespace Banco
         {
             this.formPrincipal = new Form1();
             InitializeComponent();
+            
             comboTipoConta.Items.Add("Conta Poupança");
             comboTipoConta.Items.Add("Conta Corrente");
             proxContaLabel.Text = Conta.ProximaConta().ToString();
+            
+            GeradorDeDevedores gerador = new GeradorDeDevedores();
+            this.devedores = gerador.GeraLista();
         }
 
         public void button1_Click(object sender, EventArgs e)
@@ -36,13 +42,21 @@ namespace Banco
             {
                 novaConta = new ContaCorrente();
             }
-            novaConta.cliente = new Cliente(titularBox.Text);
-            novaConta.NumeroConta = int.Parse(proxContaLabel.Text);
-            novaConta.Saldo = 50.00;
-            MessageBox.Show("Conta criada com Sucesso!\nSeu saldo é R$50");
-            proxContaLabel.Text = Conta.ProximaConta().ToString();
+            
+            novaConta.cliente = new Cliente(titularBox.Text); 
+            if (!devedores.Contains(novaConta.cliente.Nome))
+	        {
+		        novaConta.NumeroConta = int.Parse(proxContaLabel.Text);
+                novaConta.Saldo = 50.00;
+                MessageBox.Show("Conta criada com Sucesso!\nSeu saldo é R$50");
+                proxContaLabel.Text = Conta.ProximaConta().ToString();
 
-            this.formPrincipal.AdicionaConta(novaConta);
+                this.formPrincipal.AdicionaConta(novaConta);
+	        } 
+            else
+	        {
+                MessageBox.Show("Devedor não pode abrir conta!");
+	        }
         }
 
         private void comboTipoConta_SelectedIndexChanged(object sender, EventArgs e)

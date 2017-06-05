@@ -50,6 +50,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.botaoNovaConta = new System.Windows.Forms.Button();
             this.btnCalculoImpostos = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nomeBuscaBox = new System.Windows.Forms.TextBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,7 +70,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(36, 79);
+            this.groupBox1.Location = new System.Drawing.Point(36, 125);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 235);
             this.groupBox1.TabIndex = 0;
@@ -172,11 +175,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnPesquisar);
+            this.groupBox2.Controls.Add(this.nomeBuscaBox);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.comboContas);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(36, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 51);
+            this.groupBox2.Size = new System.Drawing.Size(200, 97);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar Conta";
@@ -207,7 +213,7 @@
             this.groupBox3.Controls.Add(this.comboTransferencia);
             this.groupBox3.Controls.Add(this.transferenciaValorBox);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(36, 320);
+            this.groupBox3.Location = new System.Drawing.Point(36, 366);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 104);
             this.groupBox3.TabIndex = 2;
@@ -263,7 +269,7 @@
             // 
             // botaoNovaConta
             // 
-            this.botaoNovaConta.Location = new System.Drawing.Point(36, 442);
+            this.botaoNovaConta.Location = new System.Drawing.Point(36, 488);
             this.botaoNovaConta.Name = "botaoNovaConta";
             this.botaoNovaConta.Size = new System.Drawing.Size(75, 23);
             this.botaoNovaConta.TabIndex = 3;
@@ -273,7 +279,7 @@
             // 
             // btnCalculoImpostos
             // 
-            this.btnCalculoImpostos.Location = new System.Drawing.Point(136, 442);
+            this.btnCalculoImpostos.Location = new System.Drawing.Point(136, 488);
             this.btnCalculoImpostos.Name = "btnCalculoImpostos";
             this.btnCalculoImpostos.Size = new System.Drawing.Size(100, 23);
             this.btnCalculoImpostos.TabIndex = 4;
@@ -281,11 +287,37 @@
             this.btnCalculoImpostos.UseVisualStyleBackColor = true;
             this.btnCalculoImpostos.Click += new System.EventHandler(this.btnCalculoImpostos_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "BuscarPorNome";
+            // 
+            // nomeBuscaBox
+            // 
+            this.nomeBuscaBox.Location = new System.Drawing.Point(94, 45);
+            this.nomeBuscaBox.Name = "nomeBuscaBox";
+            this.nomeBuscaBox.Size = new System.Drawing.Size(100, 20);
+            this.nomeBuscaBox.TabIndex = 5;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(108, 68);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(63, 23);
+            this.btnPesquisar.TabIndex = 6;
+            this.btnPesquisar.Text = "Buscar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 477);
+            this.ClientSize = new System.Drawing.Size(269, 575);
             this.Controls.Add(this.btnCalculoImpostos);
             this.Controls.Add(this.botaoNovaConta);
             this.Controls.Add(this.groupBox3);
@@ -328,6 +360,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button botaoNovaConta;
         private System.Windows.Forms.Button btnCalculoImpostos;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox nomeBuscaBox;
+        private System.Windows.Forms.Label label7;
     }
 }
 

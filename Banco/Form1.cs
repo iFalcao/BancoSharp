@@ -13,6 +13,7 @@ namespace Banco
 {
     public partial class Form1 : Form
     {
+        public Dictionary<string, Conta> dicionario = new Dictionary<string, Conta>();
         private List<Conta> contas = new List<Conta>();
         private Conta contaAtual;
         private Conta contaDestinatario;
@@ -45,6 +46,7 @@ namespace Banco
         {
             comboContas.Items.Add(contaCriada);
             this.contas.Add(contaCriada);
+            this.dicionario.Add(contaCriada.cliente.Nome, contaCriada);
         }
 
         private void botaoDeposito_Click(object sender, EventArgs e)
@@ -115,16 +117,22 @@ namespace Banco
 
         private void botaoTransferencia_Click(object sender, EventArgs e)
         {
-            double valorTransferencia = double.Parse(transferenciaValorBox.Text);
             try
             {
+                double valorTransferencia = double.Parse(transferenciaValorBox.Text);
                 contaAtual.Sacar(valorTransferencia);
                 contaDestinatario.Depositar(valorTransferencia);
                 saldoLabel.Text = contaAtual.Saldo.ToString();
                 MessageBox.Show("Transferência efetuada com sucesso!\n" +
                                 "Remetente: " + contaAtual.cliente.Nome + " --- Saldo: " + contaAtual.Saldo
                                 + "\nDestinatário: " + contaDestinatario.cliente.Nome + " --- Saldo: " + contaDestinatario.Saldo);
-            } catch(Exception ex)
+                transferenciaValorBox.Clear();
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show("Valor incorreto! Tente novamente...");
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -151,14 +159,29 @@ namespace Banco
 
         private void btnCalculoImpostos_Click(object sender, EventArgs e)
         {
-		    if (contaAtual is ContaCorrente cr)
+		    if (contaAtual is ContaCorrente)
 	        {
-		        MessageBox.Show("Conta Corrente\nTitular: " + cr.cliente.Nome + "\nTributo de R$" + cr.CalculaTributo().ToString());
+                ContaCorrente cr =(ContaCorrente)contaAtual;
+                MessageBox.Show("Conta Corrente\nTitular: " + cr.cliente.Nome + "\nTributo de R$" + cr.CalculaTributo().ToString());
 		    }
-			else if (contaAtual is ContaPoupanca cp)
+			else if (contaAtual is ContaPoupanca)
 		    {
+                ContaPoupanca cp = (ContaPoupanca)contaAtual;
 	    	    MessageBox.Show("Conta Poupança\nTitular: " + cp.cliente.Nome + "\nTributo de R$" + cp.CalculaTributo().ToString());
 		    }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                contaAtual = dicionario[nomeBuscaBox.Text];
+                comboContas.SelectedItem = contaAtual;
+            }
+            catch (KeyNotFoundException inex)
+            {
+                MessageBox.Show("Não existe um titular com esse nome!");
+            }
         }
     }
 }

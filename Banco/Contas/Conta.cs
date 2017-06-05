@@ -9,49 +9,34 @@ namespace Banco.Contas
 {
     public abstract class Conta
     {
-        public Conta()
-        {
-            Conta.totalContas++;
-            this.NumeroConta = totalContas;
-        }
-
-        public override bool Equals(object outraConta)
-        {
-            if (!(outraConta is Conta))
-            {
-                return false;
-            }
-
-            Conta cast = (Conta)outraConta;
-            return this.NumeroConta == cast.NumeroConta;
-        }
-
-        public override string ToString()
-        {
-            return this.cliente.Nome;
-        }
-
         protected static int totalContas;
+        private int numeroConta;
+        private double saldo;
+        public Cliente cliente { get; set; }
+        
+        
         public static int ProximaConta()
         {
             return Conta.totalContas + 1;
         }
 
-        private int numeroConta;
         public int NumeroConta
         {
             get { return numeroConta; }
             set { numeroConta = value; }
         }
 
-        private double saldo;
         public double Saldo
         {
             get { return saldo; }
             set { saldo = value; }
         }
 
-        public Cliente cliente { get; set; }
+        public Conta()
+        {
+            Conta.totalContas++;
+            this.NumeroConta = totalContas;
+        }
 
         public void Depositar(double valorDigitado)
         {
@@ -79,6 +64,22 @@ namespace Banco.Contas
             {
                 throw new SaldoInsuficienteException();
             }
+        }
+
+        public override bool Equals(object outraConta)
+        {
+            if (!(outraConta is Conta))
+            {
+                return false;
+            }
+
+            Conta cast = (Conta)outraConta;
+            return this.NumeroConta == cast.NumeroConta;
+        }
+
+        public override string ToString()
+        {
+            return this.cliente.Nome;
         }
     }
 }
