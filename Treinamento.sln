@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banco", "Banco\Banco.csproj", "{07ED9B53-1129-4188-8062-78C8FEAAF7EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorSublinha", "EditorSublinha\EditorSublinha.csproj", "{0D58B9FB-CAD3-4777-9BC5-F571C3EC654A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{07ED9B53-1129-4188-8062-78C8FEAAF7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07ED9B53-1129-4188-8062-78C8FEAAF7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07ED9B53-1129-4188-8062-78C8FEAAF7EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D58B9FB-CAD3-4777-9BC5-F571C3EC654A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D58B9FB-CAD3-4777-9BC5-F571C3EC654A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D58B9FB-CAD3-4777-9BC5-F571C3EC654A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D58B9FB-CAD3-4777-9BC5-F571C3EC654A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
