@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banco.Contas;
+using Banco.Extensões;
 
 namespace Banco
 {

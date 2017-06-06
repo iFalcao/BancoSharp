@@ -40,6 +40,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.nomeBuscaBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.comboContas = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -50,9 +53,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.botaoNovaConta = new System.Windows.Forms.Button();
             this.btnCalculoImpostos = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.nomeBuscaBox = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnFormRelatorios = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -188,6 +188,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar Conta";
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(108, 68);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(63, 23);
+            this.btnPesquisar.TabIndex = 6;
+            this.btnPesquisar.Text = "Buscar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // nomeBuscaBox
+            // 
+            this.nomeBuscaBox.Location = new System.Drawing.Point(94, 45);
+            this.nomeBuscaBox.Name = "nomeBuscaBox";
+            this.nomeBuscaBox.Size = new System.Drawing.Size(100, 20);
+            this.nomeBuscaBox.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "BuscarPorNome";
+            // 
             // comboContas
             // 
             this.comboContas.FormattingEnabled = true;
@@ -272,7 +298,7 @@
             // 
             this.botaoNovaConta.Location = new System.Drawing.Point(36, 488);
             this.botaoNovaConta.Name = "botaoNovaConta";
-            this.botaoNovaConta.Size = new System.Drawing.Size(75, 23);
+            this.botaoNovaConta.Size = new System.Drawing.Size(93, 23);
             this.botaoNovaConta.TabIndex = 3;
             this.botaoNovaConta.Text = "Nova Conta";
             this.botaoNovaConta.UseVisualStyleBackColor = true;
@@ -288,35 +314,9 @@
             this.btnCalculoImpostos.UseVisualStyleBackColor = true;
             this.btnCalculoImpostos.Click += new System.EventHandler(this.btnCalculoImpostos_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "BuscarPorNome";
-            // 
-            // nomeBuscaBox
-            // 
-            this.nomeBuscaBox.Location = new System.Drawing.Point(94, 45);
-            this.nomeBuscaBox.Name = "nomeBuscaBox";
-            this.nomeBuscaBox.Size = new System.Drawing.Size(100, 20);
-            this.nomeBuscaBox.TabIndex = 5;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(108, 68);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(63, 23);
-            this.btnPesquisar.TabIndex = 6;
-            this.btnPesquisar.Text = "Buscar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
             // btnFormRelatorios
             // 
-            this.btnFormRelatorios.Location = new System.Drawing.Point(36, 529);
+            this.btnFormRelatorios.Location = new System.Drawing.Point(101, 526);
             this.btnFormRelatorios.Name = "btnFormRelatorios";
             this.btnFormRelatorios.Size = new System.Drawing.Size(75, 23);
             this.btnFormRelatorios.TabIndex = 5;

@@ -65,6 +65,7 @@
     <Compile Include="Contas\ContaCorrente.cs" />
     <Compile Include="Contas\ContaInvestimento.cs" />
     <Compile Include="Contas\ContaPoupanca.cs" />
+    <Compile Include="Extensões\StringUtil.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

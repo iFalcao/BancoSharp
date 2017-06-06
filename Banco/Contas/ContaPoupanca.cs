@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Banco.Contas
 {
-    class ContaPoupanca : Conta, ITributavel
+    public class ContaPoupanca : Conta, ITributavel
     {
         public double CalculaTributo()
         {
